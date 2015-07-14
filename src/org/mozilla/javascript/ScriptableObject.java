@@ -3203,6 +3203,8 @@ public abstract class ScriptableObject implements Scriptable, Serializable,
             return null;
         } else if (value instanceof Wrapper) {
             return ((Wrapper) value).unwrap();
+        } else if (value instanceof ConsString) {
+            return ((ConsString) value).toString();
         } else {
             return value;
         }

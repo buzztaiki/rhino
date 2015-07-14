@@ -1796,6 +1796,8 @@ public class NativeArray extends IdScriptableObject implements List
             return null;
         } else if (value instanceof Wrapper) {
             return ((Wrapper) value).unwrap();
+        } else if (value instanceof ConsString) {
+            return ((ConsString) value).toString();
         } else {
             return value;
         }
